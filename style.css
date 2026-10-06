@@ -16,7 +16,8 @@
 }
 
 * { box-sizing: border-box; }
-html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--fondo); }
+html, body { overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--fondo); }
 body { position: relative; isolation: isolate; margin: 0; color: var(--tinta); background: transparent; font-family: var(--letra); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 body::before { position: fixed; z-index: -1; inset: -18vh -14vw; content: ""; pointer-events: none; opacity: .8; background: radial-gradient(ellipse at 18% 24%, rgba(96, 54, 232, .22), transparent 31%), radial-gradient(ellipse at 80% 42%, rgba(223, 44, 168, .17), transparent 29%), radial-gradient(ellipse at 52% 85%, rgba(52, 143, 255, .18), transparent 31%); filter: blur(36px); }
 .fondo-particulas { position: fixed; z-index: -1; inset: 0; display: block; width: 100vw; height: 100vh; pointer-events: none; }
