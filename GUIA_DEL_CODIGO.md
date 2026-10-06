@@ -7,7 +7,7 @@ Este documento explica cómo se organiza el sitio y dónde modificar cada parte 
 - `index.html`: página principal, navegación, descripción de ITSI, lista de módulos, programas y proyecto final.
 - `style.css`: colores, tipografía, tamaños, tarjetas, menú y adaptación a móvil.
 - `script.js`: controla el menú y las animaciones de aparición al desplazarse.
-- `imagenes/`: contiene el logo y las fotografías de portada y de las tarjetas de los módulos 1 al 8.
+- `imagenes/`: contiene el escudo, fotografías aportadas por el grupo y recursos visuales de las tarjetas de los módulos.
 - `modulos/`: contiene una página HTML independiente para cada uno de los ocho módulos.
 
 ## 1. Página principal: `index.html`
@@ -16,12 +16,14 @@ El documento comienza con `<!DOCTYPE html>` y `<html lang="es">`, que indican qu
 
 El `<header>` contiene la identidad de la institución y el botón del menú. El botón usa `aria-expanded` para informar si el menú está abierto y `aria-controls` para identificar el panel que abre. Los enlaces del menú apuntan a secciones de la página usando identificadores, por ejemplo `href="#modulos"` lleva al elemento que tiene `id="modulos"`.
 
+Los metadatos `og:*` preparan el título, descripción e imagen que se muestran al compartir el enlace. El favicon usa el mismo escudo institucional.
+
 Dentro de `<main>` se encuentran las secciones principales:
 
 1. `.portada`: presenta el nombre y propósito del sitio junto con una foto real de una práctica del grupo.
-2. `.resumen`: muestra la cantidad de módulos, horas y semanas.
+2. `.resumen`: muestra ocho módulos, 1,200 horas totales (1,170 de módulos y 30 de orientación) y 40 semanas.
 3. `#especialidad`: explica qué significa ITSI.
-4. `#modulos`: enlaza cada tarjeta con su página correspondiente dentro de `modulos/`.
+4. `#modulos`: enlaza cada tarjeta con su página correspondiente dentro de `modulos/`; también indica horas y semanas por módulo.
 5. `#programas`: agrupa herramientas por área y enlaza sus sitios oficiales.
 6. `#proyecto`: describe la posibilidad de que cada equipo proponga un proyecto relacionado con lo aprendido.
 
@@ -75,7 +77,7 @@ El menú solo se activa en la página que contiene `#menu-sitio`, pero las anima
 
 ## 4. Páginas de módulos
 
-Cada archivo `modulos/modulo-N.html` comparte una estructura: encabezado con el logo, enlace para regresar, título y resumen, temas principales, una idea para practicar y videos recomendados. Para cambiar el contenido de un módulo, abre su HTML correspondiente. Los estilos compartidos vienen de `../style.css` y el logo se carga desde `../imagenes/parrologo.png` porque esas páginas están dentro de la carpeta `modulos`.
+Cada archivo `modulos/modulo-N.html` comparte una estructura: encabezado y pie con el logo, enlace para regresar, título, código y duración del módulo, temas principales desplegables, una idea para practicar y videos relacionados. Para cambiar el contenido de un módulo, abre su HTML correspondiente. Los estilos compartidos vienen de `../style.css` y el logo se carga desde `../imagenes/parrologo.png` porque esas páginas están dentro de la carpeta `modulos`.
 
 Cada tema principal está dentro de `<details>` y su título dentro de `<summary>`. Al hacer clic, el navegador despliega la explicación que está en el párrafo `<p>`. Este menú desplegable funciona directamente con HTML y también se puede abrir con teclado; no necesita JavaScript. Sus colores y espaciado se controlan con las reglas `.tema-desplegable` en `style.css`.
 
@@ -92,12 +94,14 @@ Guarda los cambios y vuelve a cargar `index.html` en el navegador para verlos.
 
 ### Imágenes y descargas para prácticas
 
-Las tarjetas de los módulos 4 al 8 usan fotos guardadas en `imagenes/`, así se muestran también al abrir el sitio sin conexión. Las imágenes son de Unsplash y las páginas de origen indican su licencia de uso:
+Las imágenes de las tarjetas se guardan en `imagenes/`, así se muestran también al abrir el sitio sin conexión. La portada y las tarjetas de práctica/proyecto usan fotos compartidas por el grupo; otras imágenes son de Unsplash y sus páginas de origen indican su licencia de uso:
 
 - Módulo 4, redes: [Manuel Luikenga](https://unsplash.com/photos/ethernet-cables-connected-to-the-back-of-a-network-device-y4GHs9GEFdM).
 - Módulo 5, auditoría: [FlyD](https://unsplash.com/photos/black-laptop-computer-with-white-paper-P3-YKLS2VKA).
 - Módulo 6, conversación: [Vitaly Gariev](https://unsplash.com/photos/students-talking-in-a-lecture-hall-during-class-9faEJgSvmjc).
 - Módulo 7, microempresa: [Headway](https://unsplash.com/photos/person-gesturing-during-meeting-with-laptop-5QgIuuBxKwM).
-- Módulo 8, proyecto: [Vitaly Gariev](https://unsplash.com/photos/diverse-group-of-students-gathered-around-a-laptop-8gAbl776pc0).
+- La tarjeta del módulo 8 usa una fotografía de práctica técnica compartida por el grupo, para conectar el proyecto con el trabajo real de ITSI.
 
 La sección `#programas` de `index.html` reúne las descargas oficiales de Windows Server 2025, Windows 10, VirtualBox y las herramientas de bases de datos, ERP, redes, auditoría y monitoreo. Windows Server se descarga como edición de evaluación. Windows 10 terminó su soporte el 14 de octubre de 2025; para prácticas, úsalo únicamente en una máquina virtual aislada.
+
+La hora por módulo se tomó del descriptor correspondiente del Plan de Estudio de tercer año. El total publicado suma 1,170 horas de los ocho módulos más 30 horas de orientación al proceso educativo.
