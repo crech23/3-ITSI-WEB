@@ -31,10 +31,10 @@ Los enlaces de las tarjetas se mantienen en la misma pestaña. Por ejemplo, `hre
 
 ## 2. Apariencia: `style.css`
 
-Al principio del archivo está `:root`, donde se guardan los colores principales como variables. La paleta toma como referencia el blanco y el violeta/índigo de la página de consulta de notas:
+Al principio del archivo está `:root`, donde se guardan los colores principales como variables. La paleta parte de los colores del escudo y el uniforme escolar: azul marino para dar profundidad, amarillo para destacar y naranja como acento cálido. Las tarjetas conservan fondos claros y texto oscuro para facilitar la lectura:
 
-- `--morado` y `--morado-oscuro`: botones, enlaces y detalles importantes.
-- `--lila` y `--lila-medio`: fondos suaves para destacar algunas secciones.
+- `--azul` y `--azul-oscuro`: botones, enlaces y detalles importantes.
+- `--panel-azul` y `--panel-borde`: fondos suaves para destacar algunas secciones.
 - `--tinta`: títulos y texto principal.
 - `--texto-secundario`: descripciones y texto de apoyo.
 - `--fondo`, `--blanco` y `--borde`: superficies y separaciones.
@@ -43,22 +43,22 @@ Para cambiar toda la paleta rápidamente, edita esos valores en `:root`:
 
 | Variable | Valor actual | Uso |
 | --- | --- | --- |
-| `--morado` | `#6036e8` | Botones y acentos principales |
-| `--morado-oscuro` | `#3d20ac` | Contraste para títulos sobre tarjetas claras |
-| `--magenta` | `#df2ca8` | Segundo acento para variar tarjetas |
-| `--azul-vivo` | `#348fff` | Tercer acento para detalles |
-| `--lila` | `#2b2349` | Paneles oscuros destacados |
-| `--fondo` | `#17132b` | Fondo general oscuro |
-| `--tinta` | `#f6f2ff` | Texto principal sobre el fondo |
-| `--texto-secundario` | `#c5bddb` | Texto secundario sobre el fondo |
+| `--azul` | `#28628f` | Botones y acentos principales |
+| `--azul-oscuro` | `#173d5d` | Fondo de portada y contraste de títulos |
+| `--amarillo` | `#ffd43b` | Código de módulos y detalles destacados |
+| `--naranja` | `#ee8b35` | Acentos secundarios en las tarjetas |
+| `--panel-azul` | `#202d3b` | Paneles oscuros destacados |
+| `--fondo` | `#111b25` | Fondo general oscuro |
+| `--tinta` | `#fbf8ed` | Texto principal sobre el fondo |
+| `--texto-secundario` | `#c6d2df` | Texto secundario sobre el fondo |
 
 Las reglas que comienzan con un punto, como `.modulo`, dan estilo a las clases que aparecen en el HTML. Las reglas `:hover` describen cómo responde un elemento al pasar el puntero. Los estilos están agrupados por componente: encabezado/menú, portada, resumen, especialidad, módulos, programas, proyecto final y páginas de detalle.
 
-El fondo oscuro usa manchas violetas suaves en `body::before` y partículas móviles en el elemento `canvas.fondo-particulas`. JavaScript mueve los puntos y dibuja líneas finas entre los que están cerca. Las partículas quedan detrás del contenido; las tarjetas claras conservan contraste con texto oscuro. El movimiento se apaga si el sistema tiene activada la opción de reducir animaciones.
+El fondo oscuro usa manchas suaves en tonos azules y cálidos en `body::before` y partículas móviles en el elemento `canvas.fondo-particulas`. JavaScript mueve los puntos y dibuja líneas finas entre los que están cerca. Las partículas quedan detrás del contenido; las tarjetas claras conservan contraste con texto oscuro. El movimiento se apaga si el sistema tiene activada la opción de reducir animaciones.
 
 Al final están las reglas `@media`. Estas reorganizan el contenido en pantallas pequeñas: las tarjetas pasan a una columna, se ajusta el encabezado y el texto se hace más compacto. La regla `prefers-reduced-motion` reduce los efectos para personas que han indicado que prefieren menos movimiento.
 
-La referencia web no permitió cargar su interfaz completa en esta sesión. El fondo ahora usa morado oscuro con acentos violeta, magenta y azul; los paneles claros quedan reservados para lectura de tarjetas.
+La referencia web no permitió cargar su interfaz completa en esta sesión. El fondo combina azul marino y carbón con acentos amarillos y naranjas del escudo escolar; las tarjetas cálidas conservan texto oscuro para mantener la lectura clara.
 
 ## 3. Menú y animaciones: `script.js`
 
@@ -84,7 +84,7 @@ Cada tema principal está dentro de `<details>` y su título dentro de `<summary
 ## Cambios comunes
 
 - **Cambiar un título o descripción:** edita el texto dentro de la etiqueta HTML correspondiente.
-- **Cambiar el color principal:** modifica `--morado` y `--morado-oscuro` en `style.css`.
+- **Cambiar el color principal:** modifica `--azul` y `--azul-oscuro` en `style.css`.
 - **Añadir un programa:** copia un enlace `<a>` dentro del grupo adecuado en la sección `#programas` de `index.html` y cambia el nombre y la dirección oficial.
 - **Añadir un módulo:** crea otra página HTML en `modulos/` y agrega una tarjeta con su enlace dentro de `.lista-modulos`.
 - **Cambiar el logo:** reemplaza el archivo de `imagenes/` conservando el nombre `parrologo.png`, o actualiza la ruta `src` en los HTML.

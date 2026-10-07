@@ -82,7 +82,7 @@ if (!prefiereMenosMovimiento) { // Evita crear un fondo animado si la persona pi
         radio: 1.2 + Math.random() * 1.8, // Da a cada punto un tamaño pequeño y ligeramente distinto.
         velocidadX: (Math.random() - 0.5) * 0.34, // Asigna un movimiento horizontal lento hacia cualquier lado.
         velocidadY: (Math.random() - 0.5) * 0.34, // Asigna un movimiento vertical lento hacia cualquier lado.
-        color: ["96,54,232", "223,44,168", "52,143,255"][Math.floor(Math.random() * 3)] // Elige violeta, magenta o azul para el punto.
+        color: ["77,155,204", "255,212,59", "238,139,53"][Math.floor(Math.random() * 3)] // Elige azul, amarillo o naranja para el punto.
       })); // Termina la creación aleatoria de partículas.
     } // Termina la función que adapta el lienzo a la ventana.
 
