@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+<!-- El atributo lang indica el idioma principal y ayuda a lectores de pantalla y buscadores. -->
 <html lang="es">
 <head>
+  <!-- Metadatos: codificación, diseño adaptable, descripción, icono y hoja visual del sitio. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conoce los módulos, prácticas y recursos de tercer año de Infraestructura Tecnológica y Servicios Informáticos del Complejo Educativo Católico Dra. María Julia Hernández.">
@@ -15,12 +17,14 @@
   <link rel="stylesheet" href="style.css?v=9274567">
 </head>
 <body>
+  <!-- Encabezado fijo: identidad del centro y navegación a las secciones de esta página. -->
   <header class="encabezado" id="inicio">
     <a class="identidad" href="#inicio">
       <img src="imagenes/parrologo.png" alt="Logo del Complejo Educativo Católico Dra. María Julia Hernández">
       <span><strong>Complejo Educativo Católico</strong><small>Dra. María Julia Hernández · Quezaltepeque</small></span>
     </a>
 
+    <!-- El botón popovertarget abre el panel nativo del navegador; se cierra al hacer clic fuera o pulsar Escape. -->
     <div class="menu">
       <button class="menu-boton" type="button" popovertarget="menu-contenido" aria-controls="menu-contenido">
         Menú <span aria-hidden="true">☰</span>
@@ -35,7 +39,9 @@
     </div>
   </header>
 
+  <!-- main contiene el contenido principal; cada section representa una parte de la página. -->
   <main>
+    <!-- Portada: presenta el nombre de la especialidad, una explicación y una foto del grupo. -->
     <section class="portada">
       <div class="portada-texto">
         <p class="etiqueta">BACHILLERATO TÉCNICO · TERCER AÑO</p>
@@ -50,12 +56,14 @@
       </figure>
     </section>
 
+    <!-- Datos rápidos tomados del plan de estudio: módulos, horas y semanas. -->
     <section class="resumen" aria-label="Datos del plan de estudio">
       <p><strong>8</strong><span>módulos de especialidad</span></p>
       <p><strong>1,200</strong><span>horas, incluida orientación</span></p>
       <p><strong>40</strong><span>semanas de estudio</span></p>
     </section>
 
+    <!-- Explica qué significa ITSI y qué actividades se estudian en tercer año. -->
     <section class="seccion especialidad" id="especialidad">
       <div class="seccion-titulo">
         <p class="etiqueta">¿QUÉ ESTUDIAMOS?</p>
@@ -68,6 +76,7 @@
       </div>
     </section>
 
+    <!-- Cada tarjeta lleva a una página con la información detallada de ese módulo. -->
     <section class="modulos" id="modulos">
       <div class="seccion">
         <div class="encabezado-modulos">
@@ -91,6 +100,7 @@
       </div>
     </section>
 
+    <!-- Recursos: enlaces a páginas oficiales para descargar herramientas de práctica. -->
     <section class="seccion programas" id="programas">
       <div class="programas-intro">
         <p class="etiqueta">HERRAMIENTAS DE CLASE</p>
@@ -133,6 +143,7 @@
       <p class="aviso-recursos">Windows Server se ofrece como evaluación por 180 días. Windows 10 terminó su soporte el 14 de octubre de 2025; úsalo solo en una máquina virtual aislada para prácticas y no para navegar ni guardar información personal. Escanea únicamente redes de laboratorio con autorización.</p>
     </section>
 
+    <!-- Cierre de la página con la idea del proyecto final y acceso al módulo 3.8. -->
     <section class="cierre" id="proyecto">
       <div class="seccion cierre-contenido">
         <div><p class="etiqueta">LO QUE APRENDEMOS, LO PONEMOS EN PRÁCTICA</p><h2>Proyecto final</h2></div>
@@ -142,6 +153,7 @@
     </section>
   </main>
 
+  <!-- Pie de página: identidad institucional y enlace para regresar al inicio. -->
   <footer class="pie"><a class="pie-identidad" href="#inicio"><img src="imagenes/parrologo.png" alt=""><span>3.º ITSI · Complejo Educativo Católico Dra. María Julia Hernández</span></a><a href="#inicio">Volver al inicio ↑</a></footer>
 </body>
 </html>

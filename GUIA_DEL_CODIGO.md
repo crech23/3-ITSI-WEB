@@ -1,6 +1,6 @@
 # Guía del sitio — 3 ITSI WEBSITE
 
-Esta guía describe la versión actual del sitio y explica cómo editarla desde Visual Studio Code. El proyecto está hecho con HTML y CSS; no necesita archivos ni código JavaScript.
+Esta guía describe la versión actual del sitio y explica cómo editarla desde Visual Studio Code. El proyecto está hecho con HTML y CSS; no necesita archivos ni código JavaScript. Las explicaciones también están dentro de los archivos: los comentarios HTML comienzan con `<!--` y los comentarios CSS con `/*`.
 
 ## Archivos y carpetas
 
