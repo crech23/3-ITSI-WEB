@@ -1,84 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <!-- Configuración de la página: idioma, vista móvil, título, icono y estilos compartidos. -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Información y videos recomendados para el módulo 1: Gestión de bases de datos.">
-  <title>Módulo 3.1 | 3 ITSI WEB SITE</title>
-  <link rel="icon" type="image/png" href="../imagenes/parrologo.png">
-  <link rel="stylesheet" href="../style.css?v=9274567">
-</head>
-<body>
-  <!-- Encabezado con el escudo y el enlace para regresar a la lista general. -->
-  <header class="encabezado">
-    <a class="identidad" href="../index.html#inicio">
-      <img src="../imagenes/parrologo.png" alt="Logo del Complejo Educativo Católico Dra. María Julia Hernández">
-      <span><strong>3 ITSI WEB SITE</strong><small>Infraestructura Tecnológica y Servicios Informáticos</small></span>
-    </a>
-    <a class="boton" href="../index.html#modulos">Volver a módulos <span aria-hidden="true">↩</span></a>
-  </header>
+  <head>
+    <!-- Datos de esta página y enlace a los estilos compartidos. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Información y videos recomendados para el módulo 1: Gestión de bases de datos."
+    />
+    <title>Módulo 3.1 | 3 ITSI WEB SITE</title>
+    <link rel="icon" type="image/png" href="../imagenes/parrologo.png" />
+    <link rel="stylesheet" href="../style.css?v=9274567" />
+  </head>
+  <body>
+    <!-- Escudo del centro y acceso a la lista de módulos. -->
+    <header class="encabezado">
+      <a class="identidad" href="../index.html#inicio">
+        <img
+          src="../imagenes/parrologo.png"
+          alt="Logo del Complejo Educativo Católico Dra. María Julia Hernández"
+        />
+        <span
+          ><strong>3 ITSI WEB SITE</strong
+          ><small
+            >Infraestructura Tecnológica y Servicios Informáticos</small
+          ></span
+        >
+      </a>
+      <a class="boton" href="../index.html#modulos"
+        >Volver a módulos <span aria-hidden="true">↩</span></a
+      >
+    </header>
 
-  <!-- Contenido particular del módulo actual. -->
-  <main class="pagina-modulo">
-    <a class="volver" href="../index.html#modulos">← Regresar a los módulos de tercer año</a>
-    <!-- Código, nombre, resumen y duración según el plan de estudio. -->
-    <section class="titulo-modulo">
-      <p class="etiqueta">MÓDULO 3.1 · BTVITSI</p>
-      <h1>Gestión de bases de datos</h1>
-      <p class="resumen-modulo">Aprende a organizar, consultar y cuidar la información que una empresa guarda en sus bases de datos.</p>
-      <div class="datos-modulo"><span>180 horas</span><span>6 semanas</span><span>ITSI</span></div>
-    </section>
-
-    <!-- Paneles del contenido: propósito, temas principales y práctica. -->
-    <div class="detalle-cuerpo">
-      <section class="panel-info">
-        <h2>¿De qué trata?</h2>
-        <p>Instalar, configurar, diseñar y mantener bases de datos; también respaldar y recuperar información para que esté disponible y correcta.</p>
-      </section>
-      <section class="panel-info">
-        <h2>Temas principales</h2>
-        <!-- details y summary crean cada tema desplegable sin JavaScript. -->
-        <div class="lista-temas">
-          <details class="tema-desplegable">
-            <summary>Diseño de tablas y relaciones entre datos</summary>
-            <p>Una base de datos organiza la información en tablas. Las relaciones conectan datos relacionados y ayudan a evitar repeticiones.</p>
-          </details>
-          <details class="tema-desplegable">
-            <summary>Consultas SQL para buscar y actualizar información</summary>
-            <p>Con SQL se pueden buscar registros, filtrar resultados y agregar o modificar información según lo que necesite el sistema.</p>
-          </details>
-          <details class="tema-desplegable">
-            <summary>Configuración y mantenimiento de una base de datos</summary>
-            <p>Incluye preparar la base, organizar el acceso de usuarios y revisar que funcione correctamente para mantener la información disponible.</p>
-          </details>
-          <details class="tema-desplegable">
-            <summary>Copias de seguridad y comprobación de integridad</summary>
-            <p>Las copias permiten recuperar información ante un error. También se revisa que los datos estén completos y puedan consultarse.</p>
-          </details>
+    <!-- Aquí empieza la información de este módulo. -->
+    <main class="pagina-modulo">
+      <a class="volver" href="../index.html#modulos"
+        >← Regresar a los módulos de tercer año</a
+      >
+      <!-- Nombre, código y duración del módulo. -->
+      <section class="titulo-modulo">
+        <p class="etiqueta">MÓDULO 3.1 · BTVITSI</p>
+        <h1>Gestión de bases de datos</h1>
+        <p class="resumen-modulo">
+          Aprende a organizar, consultar y cuidar la información que una empresa
+          guarda en sus bases de datos.
+        </p>
+        <div class="datos-modulo">
+          <span>180 horas</span><span>6 semanas</span><span>ITSI</span>
         </div>
       </section>
-      <section class="panel-info panel-practica">
-        <h2>Una idea para practicar</h2>
-        <p>Diseñar una base de datos pequeña para una biblioteca o un inventario, hacer consultas y demostrar que puede recuperarse desde una copia de seguridad.</p>
-      </section>
-    </div>
 
-    <!-- Enlaces audiovisuales relacionados con el módulo. -->
-    <section class="videos-modulo">
-      <h2>Videos recomendados</h2>
-      <p>Enlaces a videos en español relacionados con este módulo. Se abrirán en esta misma pestaña.</p>
-      <div class="video-lista">
-          <a class="video-enlace" href="https://www.youtube.com/watch?v=6JBsoPOwPew">
-            <span class="video-play" aria-hidden="true">▶</span><span class="video-texto"><strong>Aprende SQL: curso desde cero</strong><small>freeCodeCamp Español · SQL y bases de datos</small></span>
-          </a>
+      <!-- Resumen del módulo, temas y una idea para practicar. -->
+      <div class="detalle-cuerpo">
+        <section class="panel-info">
+          <h2>¿De qué trata?</h2>
+          <p>
+            Instalar, configurar, diseñar y mantener bases de datos; también
+            respaldar y recuperar información para que esté disponible y
+            correcta.
+          </p>
+        </section>
+        <section class="panel-info">
+          <h2>Temas principales</h2>
+          <!-- Cada tema se puede abrir para leer su explicación. -->
+          <div class="lista-temas">
+            <details class="tema-desplegable">
+              <summary>Diseño de tablas y relaciones entre datos</summary>
+              <p>
+                Una base de datos organiza la información en tablas. Las
+                relaciones conectan datos relacionados y ayudan a evitar
+                repeticiones.
+              </p>
+            </details>
+            <details class="tema-desplegable">
+              <summary>
+                Consultas SQL para buscar y actualizar información
+              </summary>
+              <p>
+                Con SQL se pueden buscar registros, filtrar resultados y agregar
+                o modificar información según lo que necesite el sistema.
+              </p>
+            </details>
+            <details class="tema-desplegable">
+              <summary>
+                Configuración y mantenimiento de una base de datos
+              </summary>
+              <p>
+                Incluye preparar la base, organizar el acceso de usuarios y
+                revisar que funcione correctamente para mantener la información
+                disponible.
+              </p>
+            </details>
+            <details class="tema-desplegable">
+              <summary>
+                Copias de seguridad y comprobación de integridad
+              </summary>
+              <p>
+                Las copias permiten recuperar información ante un error. También
+                se revisa que los datos estén completos y puedan consultarse.
+              </p>
+            </details>
+          </div>
+        </section>
+        <section class="panel-info panel-practica">
+          <h2>Una idea para practicar</h2>
+          <p>
+            Diseñar una base de datos pequeña para una biblioteca o un
+            inventario, hacer consultas y demostrar que puede recuperarse desde
+            una copia de seguridad.
+          </p>
+        </section>
       </div>
-      <p class="nota-video">Los videos pertenecen a sus respectivos canales de YouTube.</p>
-    </section>
-    <div class="pie-detalle"><a class="volver" href="../index.html#modulos">← Volver a ver todos los módulos</a></div>
-  </main>
 
-  <!-- Pie común: nombre del sitio y enlace para volver al inicio. -->
-  <footer class="pie"><a class="pie-identidad" href="../index.html#inicio"><img src="../imagenes/parrologo.png" alt=""><span>3 ITSI WEB SITE · Complejo Educativo Católico Dra. María Julia Hernández</span></a><a href="../index.html#inicio">Inicio ↑</a></footer>
-</body>
+      <!-- Videos relacionados con este tema. -->
+      <section class="videos-modulo">
+        <h2>Videos recomendados</h2>
+        <p>
+          Enlaces a videos en español relacionados con este módulo. Se abrirán
+          en esta misma pestaña.
+        </p>
+        <div class="video-lista">
+          <a
+            class="video-enlace"
+            href="https://www.youtube.com/watch?v=6JBsoPOwPew"
+          >
+            <span class="video-play" aria-hidden="true">▶</span
+            ><span class="video-texto"
+              ><strong>Aprende SQL: curso desde cero</strong
+              ><small>freeCodeCamp Español · SQL y bases de datos</small></span
+            >
+          </a>
+        </div>
+        <p class="nota-video">
+          Los videos pertenecen a sus respectivos canales de YouTube.
+        </p>
+      </section>
+      <div class="pie-detalle">
+        <a class="volver" href="../index.html#modulos"
+          >← Volver a ver todos los módulos</a
+        >
+      </div>
+    </main>
+
+    <!-- Cierre de la página y enlace para volver al inicio. -->
+    <footer class="pie">
+      <a class="pie-identidad" href="../index.html#inicio"
+        ><img src="../imagenes/parrologo.png" alt="" /><span
+          >3 ITSI WEB SITE · Complejo Educativo Católico Dra. María Julia
+          Hernández</span
+        ></a
+      ><a href="../index.html#inicio">Inicio ↑</a>
+    </footer>
+  </body>
 </html>
