@@ -1,69 +1,136 @@
-# Guía del sitio — 3 ITSI WEBSITE
+# Guía ordenada del sitio 3 ITSI WEBSITE
 
-Esta guía describe la versión actual del sitio y explica cómo editarla desde Visual Studio Code. El proyecto está hecho con HTML y CSS; no necesita archivos ni código JavaScript. Las explicaciones también están dentro de los archivos: los comentarios HTML comienzan con `<!--` y los comentarios CSS con `/*`.
+## Para qué sirve esta guía
 
-## Archivos y carpetas
+Aquí se explica la página en el mismo orden en que aparece en pantalla, qué contiene cada parte y qué archivo debes abrir para cambiarla. El sitio usa HTML para el contenido y CSS para la presentación y los efectos visuales. No contiene archivos JavaScript.
 
-- `index.html`: portada, navegación, descripción de ITSI, tarjetas de los módulos, programas y proyecto final.
-- `style.css`: colores, tipografía, distribución, menú, tarjetas, fondos animados y adaptación a distintos tamaños de pantalla.
-- `imagenes/`: escudo, fotografías y recursos gráficos usados por las páginas.
-- `modulos/`: una página HTML independiente para cada uno de los ocho módulos.
+Los comentarios están también dentro del código: en HTML se escriben entre `<!--` y `-->`; en CSS, entre `/*` y `*/`.
 
-## La página principal (`index.html`)
+## 1. Archivos del proyecto
 
-El archivo empieza con `<!DOCTYPE html>` y `<html lang="es">`. Esto identifica el documento como HTML moderno e indica que su idioma es español. En `<head>` están el título, la descripción, el favicon y el enlace a `style.css`.
+| Archivo o carpeta | Qué contiene |
+| --- | --- |
+| `index.html` | Página principal y enlaces a las ocho páginas de módulo. |
+| `style.css` | Colores, tamaños, distribución, fondos, menú y versión adaptable para móviles. |
+| `modulos/` | Ocho páginas con la información ampliada de cada módulo. |
+| `imagenes/` | Logo, fotografías de prácticas e ilustraciones de las tarjetas. |
 
-El `<header>` reúne el logo de la institución y el menú. El menú usa el atributo HTML `popover` y el botón `popovertarget="menu-contenido"`: el navegador abre y cierra el panel, lo cierra al hacer clic fuera, al elegir un enlace o al presionar Escape. No hace falta un archivo adicional para que funcione.
+Abre la carpeta completa en Visual Studio Code. Mantén juntas estas carpetas y archivos porque las páginas usan rutas relativas para encontrar CSS e imágenes.
 
-Dentro de `<main>` están las secciones principales:
+## 2. Página principal: `index.html`
 
-1. `.portada`: nombre de la especialidad y una fotografía de una práctica.
-2. `.resumen`: cantidad de módulos, horas y semanas.
-3. `#especialidad`: explicación de ITSI.
-4. `#modulos`: tarjetas con código, nombre, resumen y enlace a la página de cada módulo.
-5. `#programas`: herramientas agrupadas por área con enlaces a sus sitios oficiales.
-6. `#proyecto`: descripción del proyecto final que cada equipo puede proponer.
+El navegador interpreta el archivo de arriba hacia abajo. Las secciones siguientes aparecen en este orden.
 
-Los enlaces internos usan identificadores. Por ejemplo, `href="#modulos"` lleva a la sección cuyo atributo es `id="modulos"`. Los enlaces a detalle, como `modulos/modulo-1.html`, abren páginas del mismo sitio en la pestaña actual.
+### 2.1 Configuración de la página (`<head>`)
 
-## Apariencia (`style.css`)
+- `<!DOCTYPE html>` indica que el documento utiliza HTML moderno.
+- `<html lang="es">` declara que el contenido está en español.
+- La etiqueta `charset` permite mostrar correctamente letras como ñ y tildes.
+- `viewport` adapta el ancho de la página a teléfonos y tabletas.
+- `description`, `og:title` y otros metadatos describen la página para buscadores y al compartir el enlace.
+- `rel="icon"` selecciona el escudo que aparece en la pestaña del navegador.
+- `<link rel="stylesheet" ...>` conecta esta página con `style.css`. El número después de `?v=` ayuda al navegador a cargar la versión actualizada del diseño.
+- `<title>` establece el texto de la pestaña.
 
-Al principio de la hoja están las variables de `:root`, que reúnen los colores y la tipografía. La paleta usa azul marino, amarillo y naranja, inspirados en el escudo y el uniforme. Las tarjetas de módulos usan fondo claro y texto oscuro para facilitar la lectura.
+### 2.2 Encabezado y menú (`header.encabezado`)
 
-- `--azul` y `--azul-oscuro`: botones, enlaces y acentos.
-- `--amarillo` y `--naranja`: números y detalles destacados.
-- `--fondo`, `--tinta` y `--texto-secundario`: fondo general y textos.
-- `--superficie` y `--borde`: tarjetas y separadores.
-- `--letra`: tipografía de todo el sitio.
+La clase `identidad` agrupa el escudo y el nombre del centro. Su enlace lleva al inicio. El botón tiene `popovertarget="menu-contenido"`, que se conecta con el `id` del panel de enlaces. El navegador se encarga de abrirlo, cerrarlo al hacer clic fuera y cerrarlo con Escape; esta interacción no requiere JavaScript.
 
-Para cambiar la paleta, modifica esos valores dentro de `:root`. Las reglas con punto, como `.modulo`, aplican a las clases del HTML. Las reglas `:hover` definen el aspecto al pasar el cursor y `:focus-visible` marca el elemento que se usa con teclado.
+Los enlaces `#inicio`, `#especialidad`, `#modulos`, `#programas` y `#proyecto` saltan a secciones de esta misma página. El símbolo `#` indica que el destino es un elemento con ese `id`.
 
-El fondo tiene manchas de color y puntos discretos hechos con gradientes CSS. Las reglas `@keyframes` desplazan esos elementos lentamente. En equipos que tienen activada la preferencia de reducir movimiento, el bloque `@media (prefers-reduced-motion: reduce)` detiene la animación.
+### 2.3 Portada (`section.portada`)
 
-Las reglas `@media (max-width: 720px)` y `@media (max-width: 520px)` reorganizan la página para tabletas y teléfonos: las columnas pasan a una sola, se ajustan los espacios y el encabezado se hace más compacto.
+Es la presentación principal de ITSI. Dentro de `.portada-texto` están la etiqueta del nivel, el título del sitio, una bienvenida, una explicación breve y el botón **Conocer los módulos**. El botón apunta a `#modulos`.
 
-## Páginas de módulos
+La fotografía está dentro de `<figure class="portada-foto">`. El texto alternativo `alt` describe la imagen si no se carga y ayuda a las personas que usan lectores de pantalla. `<figcaption>` muestra el pie de foto sobre la imagen.
 
-Cada archivo `modulos/modulo-N.html` comparte el encabezado con logo, enlace de regreso, nombre y código del módulo, duración, temas, idea de práctica y recursos relacionados. Los estilos vienen de `../style.css`; las imágenes y el escudo se cargan desde `../imagenes/` porque las páginas están dentro de `modulos/`.
+Para cambiar esta portada, edita sus textos y la ruta `src` de la imagen en esta sección. La distribución visual se controla con `.portada` y `.portada-foto` en `style.css`.
 
-Los temas se construyen con las etiquetas nativas `<details>` y `<summary>`. Al pulsar el título, el navegador muestra u oculta la explicación. También se pueden manejar con teclado.
+### 2.4 Datos del plan (`section.resumen`)
 
-## Cambios comunes
+La franja muestra ocho módulos, 1,200 horas incluyendo orientación y 40 semanas. Cada `<p>` representa un dato: `<strong>` resalta la cifra y `<span>` explica qué significa. El diseño de tres columnas está en `.resumen`.
 
-- **Cambiar un título o descripción:** edita el texto dentro de la etiqueta HTML correspondiente.
-- **Cambiar colores o tamaños:** modifica las reglas de `style.css`.
-- **Añadir un programa:** agrega un enlace `<a>` dentro del grupo adecuado de `#programas` en `index.html`; utiliza la página oficial del programa.
-- **Añadir un tema a un módulo:** copia un bloque `<details class="tema-desplegable">` en la página del módulo y cambia el contenido de `<summary>` y `<p>`.
-- **Cambiar el logo:** reemplaza el archivo en `imagenes/` conservando su nombre o actualiza la ruta `src` en los HTML.
+### 2.5 Explicación de la especialidad (`section#especialidad`)
 
-## Fotografías, recursos y datos
+La columna izquierda contiene el subtítulo, el encabezado “¿Qué es ITSI?” y el escudo. La columna derecha explica el significado de la especialidad y lo que se estudia en tercer año. Los textos se editan en los dos párrafos de `.texto-seccion`; las columnas y sus espacios se definen en `.especialidad`.
 
-Las imágenes están en `imagenes/`, por lo que las páginas pueden mostrarlas desde el proyecto local. Las tarjetas de módulos incluyen fotografías de prácticas del grupo y recursos visuales vinculados con cada tema.
+### 2.6 Tarjetas de módulos (`section#modulos`)
 
-La sección de programas enlaza a páginas oficiales de descarga de Windows Server, Windows 10 y herramientas para bases de datos, ERP, redes, auditoría y monitoreo. Windows Server se ofrece como evaluación; Windows 10 terminó su soporte el 14 de octubre de 2025, así que se recomienda usarlo únicamente en una máquina virtual aislada para prácticas.
+El encabezado presenta la sección. En `.lista-modulos` hay ocho enlaces; cada tarjeta completa abre la página indicada en su atributo `href`. Dentro de cada tarjeta están el código, la duración, el nombre, un resumen y una imagen con descripción `alt`.
 
-Las horas por módulo se tomaron del plan de estudio de tercer año. El total publicado suma 1,170 horas de los ocho módulos y 30 horas de orientación al proceso educativo.
+| Código | Tema | Página de detalle |
+| --- | --- | --- |
+| 3.1 | Gestión de bases de datos | `modulos/modulo-1.html` |
+| 3.2 | Soporte a sistemas empresariales (ERP) | `modulos/modulo-2.html` |
+| 3.3 | Operación y monitoreo de centros de datos | `modulos/modulo-3.html` |
+| 3.4 | Servicios de red y aplicaciones empresariales | `modulos/modulo-4.html` |
+| 3.5 | Auditoría de sistemas de información | `modulos/modulo-5.html` |
+| 3.6 | Conversación en inglés sobre auditoría | `modulos/modulo-6.html` |
+| 3.7 | Microempresa asociativa y cooperativa | `modulos/modulo-7.html` |
+| 3.8 | Proyecto tecnológico integrador | `modulos/modulo-8.html` |
 
-## Abrir y editar el sitio
+Para modificar una tarjeta, edita el enlace y su contenido dentro de `index.html`. Para modificar su aspecto, busca `.modulo`, `.modulo-con-foto` y `.numero-modulo` en `style.css`. Las reglas `:hover` son los cambios que aparecen al pasar el puntero.
 
-Abre `index.html` en el navegador para recorrer el sitio. Para modificarlo, abre la carpeta completa en Visual Studio Code; conserva juntas las carpetas `imagenes` y `modulos` y los archivos `index.html` y `style.css`, porque las páginas usan esas rutas relativas.
+### 2.7 Programas y recursos (`section#programas`)
+
+La introducción explica que los enlaces llevan a páginas oficiales. Cada `.grupo-programa` organiza descargas relacionadas: sistemas operativos y máquinas virtuales, bases de datos, sistemas empresariales, redes, auditoría y monitoreo.
+
+Cada `<a>` contiene la dirección de descarga. El texto dentro de `<span>` indica el tipo de enlace, por ejemplo, “Descarga oficial”. Al agregar un recurso, copia un enlace dentro del grupo adecuado y verifica la dirección antes de guardar.
+
+El párrafo `.aviso-recursos` recuerda las condiciones de uso de Windows Server, Windows 10 y herramientas de red. Se mantiene separado de los enlaces para que las indicaciones de práctica no se confundan con las descargas.
+
+### 2.8 Proyecto final (`section#proyecto`)
+
+La última sección explica que cada equipo puede desarrollar una propuesta relacionada con lo aprendido durante la especialidad. El botón abre la página del módulo 3.8. El color y la distribución se controlan con `.cierre` y `.cierre-contenido`.
+
+### 2.9 Pie de página (`footer.pie`)
+
+Muestra otra vez el escudo y el nombre del centro, además del enlace **Volver al inicio**. El estilo común está en `.pie` y `.pie-identidad`.
+
+## 3. Páginas individuales de los módulos
+
+Cada archivo `modulos/modulo-N.html` sigue la misma estructura; cambia el número, el contenido y los recursos según el módulo.
+
+1. **Configuración:** título de pestaña, descripción, icono y hoja CSS. Se usa `../` porque los HTML están dentro de `modulos/` y deben subir un nivel para llegar a `imagenes/` y `style.css`.
+2. **Encabezado:** escudo, nombre del sitio y enlace de regreso a `index.html#modulos`.
+3. **Título del módulo:** código 3.1–3.8, nombre, resumen y datos de horas y semanas.
+4. **¿De qué trata?:** párrafo que resume el propósito del módulo.
+5. **Temas principales:** cada tema está en `<details>`. El encabezado de cada tema es `<summary>` y la explicación es el párrafo que sigue. El navegador muestra u oculta ese texto; no se necesita JavaScript.
+6. **Una idea para practicar:** actividad sencilla para relacionar los temas con una práctica de clase.
+7. **Videos recomendados:** enlaces a material relacionado. El texto indica el título del video y el canal.
+8. **Regreso y pie:** enlaces que vuelven a la lista de módulos o al inicio.
+
+Para cambiar el contenido de un módulo, abre el archivo correspondiente: por ejemplo, el módulo 3.2 está en `modulos/modulo-2.html`. No cambies el nombre de una carpeta o imagen sin actualizar también las rutas que la usan.
+
+## 4. Hoja de estilos: `style.css`
+
+La hoja CSS está agrupada por componentes. Busca el nombre de clase entre comentarios para ubicar la parte que quieres ajustar.
+
+1. **Variables `:root`:** colores, fondos, bordes, sombra y familia tipográfica. Cambiar aquí una variable como `--azul` modifica todos los componentes que la usan.
+2. **Normalización y fondo:** `box-sizing` simplifica el cálculo del tamaño. `body::before` y `body::after` crean gradientes y puntos decorativos. Los `@keyframes` mueven esas capas lentamente usando CSS.
+3. **Encabezado y menú:** `.encabezado` mantiene la barra visible al desplazarse. `.menu-boton` da estilo al botón y `.menu-contenido` al panel nativo del navegador.
+4. **Portada:** `.portada` distribuye el texto y la fotografía; la imagen usa `object-fit: cover` para llenar su espacio sin deformarse.
+5. **Datos y especialidad:** `.resumen` alinea cifras; `.especialidad` organiza el encabezado y la descripción en columnas.
+6. **Módulos:** `.lista-modulos` crea la cuadrícula y `.modulo` define la apariencia de cada enlace-tarjeta. `.modulo-con-foto` reserva espacio para la imagen.
+7. **Recursos y cierre:** `.programas` agrupa enlaces de descarga; `.cierre` da énfasis al proyecto final.
+8. **Páginas de detalle:** `.pagina-modulo`, `.titulo-modulo`, `.detalle-cuerpo`, `.panel-info` y `.videos-modulo` dan forma a las páginas de cada módulo.
+9. **Temas desplegables:** `.tema-desplegable` define colores, separación y el signo más/menos de `<details>`.
+10. **Diseño adaptable:** `@media (max-width: 720px)` reorganiza tabletas; `@media (max-width: 520px)` adapta teléfonos. `prefers-reduced-motion` detiene el fondo animado si el dispositivo lo solicita.
+
+En CSS, un selector con punto como `.modulo` busca un elemento que tenga `class="modulo"`. Un selector con `#`, como `#modulos`, busca el `id` correspondiente. Una regla entre llaves `{ }` reúne propiedades: por ejemplo `color` cambia el texto y `background` cambia el fondo.
+
+## 5. Cambios frecuentes
+
+- **Cambiar un texto:** modifica el contenido entre etiquetas en el HTML, sin borrar las etiquetas.
+- **Cambiar una foto:** sustituye el valor de `src` y escribe una descripción clara en `alt`.
+- **Cambiar un color:** edita una variable de `:root` en `style.css`.
+- **Cambiar un tema de módulo:** edita el `<summary>` y el párrafo dentro de su `<details>`.
+- **Agregar un programa:** crea un `<a href="DIRECCIÓN">Nombre <span>Descarga oficial</span></a>` dentro de su categoría.
+- **Cambiar el orden de una tarjeta:** mueve el bloque `<a class="modulo ...">` correspondiente dentro de `.lista-modulos`.
+- **Ver los cambios:** guarda el archivo y actualiza la página en el navegador.
+
+## 6. Imágenes, horas y seguridad
+
+Las imágenes están guardadas localmente en `imagenes/` para que el sitio use las mismas fotos al abrirse desde el proyecto. Las horas y semanas se basan en el plan de estudio: el total publicado suma 1,170 horas de módulos y 30 horas de orientación.
+
+Los enlaces de Windows Server conducen a una edición de evaluación. Windows 10 terminó su soporte el 14 de octubre de 2025; úsalo solo en una máquina virtual aislada para las prácticas. Realiza escaneos de red únicamente en laboratorios autorizados.
