@@ -707,10 +707,15 @@ button:focus-visible {
   color: var(--azul-oscuro);
   font-size: 19px;
 }
-.videos-modulo h2 {
+.videos-modulo > h2 {
   margin: 0 0 10px;
   color: #ffd43b;
   font-size: 19px;
+}
+.videos-modulo h3 {
+  margin: 18px 0 9px;
+  color: var(--tinta);
+  font-size: 15px;
 }
 .panel-info p {
   margin: 0;
@@ -757,7 +762,7 @@ button:focus-visible {
   margin-bottom: 5px;
   color: #ffd43b;
 }
-.documento-modulo h2 {
+.documento-modulo h3 {
   margin: 0;
   color: var(--tinta);
   font-size: 17px;

@@ -98,9 +98,8 @@ Cada archivo `modulos/modulo-N.html` sigue la misma estructura; cambia el númer
 4. **¿De qué trata?:** párrafo que resume el propósito del módulo.
 5. **Temas principales:** cada tema está en `<details>`. El encabezado de cada tema es `<summary>` y la explicación es el párrafo que sigue. El navegador muestra u oculta ese texto; no se necesita JavaScript.
 6. **Una idea para practicar:** actividad sencilla para relacionar los temas con una práctica de clase.
-7. **PDF del proyecto:** en los módulos 3.1, 3.2, 3.4 y 3.5 aparece una tarjeta para descargar el documento relacionado.
-8. **Videos recomendados:** enlaces al material audiovisual. El texto muestra el título y el canal.
-9. **Regreso y pie:** enlaces que vuelven a la lista de módulos o al inicio.
+7. **Material de apoyo:** reúne videos y, en los módulos 3.1, 3.2, 3.4 y 3.5, una tarjeta para descargar el PDF del proyecto.
+8. **Regreso y pie:** enlaces que vuelven a la lista de módulos o al inicio.
 
 Para cambiar el contenido de un módulo, abre el archivo correspondiente: por ejemplo, el módulo 3.2 está en `modulos/modulo-2.html`. No cambies el nombre de una carpeta o imagen sin actualizar también las rutas que la usan.
 
