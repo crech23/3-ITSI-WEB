@@ -14,6 +14,7 @@ Los comentarios están también dentro del código: en HTML se escriben entre `<
 | `style.css` | Colores, tamaños, distribución, fondos, menú y versión adaptable para móviles. |
 | `modulos/` | Ocho páginas con la información ampliada de cada módulo. |
 | `imagenes/` | Logo, fotografías de prácticas e ilustraciones de las tarjetas. |
+| `documentos/` | PDF descargables vinculados desde sus módulos correspondientes. |
 
 Abre la carpeta completa en Visual Studio Code. Mantén juntas estas carpetas y archivos porque las páginas usan rutas relativas para encontrar CSS e imágenes.
 
@@ -89,7 +90,7 @@ Muestra otra vez el escudo y el nombre del centro, además del enlace **Volver a
 
 ## 3. Páginas individuales de los módulos
 
-Cada archivo `modulos/modulo-N.html` sigue la misma estructura; cambia el número, el contenido y los recursos según el módulo.
+Cada archivo `modulos/modulo-N.html` sigue la misma estructura; cambia el número, el contenido y los recursos según el módulo. Los PDF de algunos proyectos se guardan en `documentos/` y se enlazan desde la página relacionada.
 
 1. **Configuración:** título de pestaña, descripción, icono y hoja CSS. Se usa `../` porque los HTML están dentro de `modulos/` y deben subir un nivel para llegar a `imagenes/` y `style.css`.
 2. **Encabezado:** escudo, nombre del sitio y enlace de regreso a `index.html#modulos`.
@@ -97,8 +98,9 @@ Cada archivo `modulos/modulo-N.html` sigue la misma estructura; cambia el númer
 4. **¿De qué trata?:** párrafo que resume el propósito del módulo.
 5. **Temas principales:** cada tema está en `<details>`. El encabezado de cada tema es `<summary>` y la explicación es el párrafo que sigue. El navegador muestra u oculta ese texto; no se necesita JavaScript.
 6. **Una idea para practicar:** actividad sencilla para relacionar los temas con una práctica de clase.
-7. **Videos recomendados:** enlaces a material relacionado. El texto indica el título del video y el canal.
-8. **Regreso y pie:** enlaces que vuelven a la lista de módulos o al inicio.
+7. **PDF del proyecto:** en los módulos 3.1, 3.2, 3.4 y 3.5 aparece una tarjeta para descargar el documento relacionado.
+8. **Videos recomendados:** enlaces al material audiovisual. El texto muestra el título y el canal.
+9. **Regreso y pie:** enlaces que vuelven a la lista de módulos o al inicio.
 
 Para cambiar el contenido de un módulo, abre el archivo correspondiente: por ejemplo, el módulo 3.2 está en `modulos/modulo-2.html`. No cambies el nombre de una carpeta o imagen sin actualizar también las rutas que la usan.
 
@@ -131,6 +133,9 @@ En CSS, un selector con punto como `.modulo` busca un elemento que tenga `class=
 
 ## 6. Imágenes, horas y seguridad
 
-Las imágenes están guardadas localmente en `imagenes/` para que el sitio use las mismas fotos al abrirse desde el proyecto. Las horas y semanas se basan en el plan de estudio: el total publicado suma 1,170 horas de módulos y 30 horas de orientación.
+Las imágenes están guardadas localmente en `imagenes/` para que el sitio use las mismas fotos al abrirse desde el proyecto. Los cuatro PDF disponibles se guardan en `documentos/` con nombres descriptivos. Cada tarjeta de descarga aparece en el módulo al que corresponde: 3.1 bases de datos, 3.2 ERP, 3.4 servicios de red y 3.5 auditoría.
+
+Las horas y semanas se basan en el plan de estudio: el total publicado suma 1,170 horas de módulos y 30 horas de orientación.
+
 
 Los enlaces de Windows Server conducen a una edición de evaluación. Windows 10 terminó su soporte el 14 de octubre de 2025; úsalo solo en una máquina virtual aislada para las prácticas. Realiza escaneos de red únicamente en laboratorios autorizados.
