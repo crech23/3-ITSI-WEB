@@ -208,9 +208,24 @@ button:focus-visible {
   border-top: 3px solid var(--azul);
   border-radius: 8px;
   box-shadow: var(--sombra-suave);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  transition:
+    opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    display 0.22s allow-discrete,
+    overlay 0.22s allow-discrete;
 }
 .menu-contenido:popover-open {
   display: grid; /* Acomoda los enlaces cuando el menú se abre. */
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@starting-style {
+  .menu-contenido:popover-open {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
 }
 .menu-contenido a {
   padding: 9px 11px;
@@ -218,10 +233,15 @@ button:focus-visible {
   border-radius: 5px;
   text-decoration: none;
   font-size: 13px;
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease,
+    transform 0.18s ease;
 }
 .menu-contenido a:hover {
   color: #fff;
   background: var(--azul-oscuro);
+  transform: translateX(2px);
 }
 
 /* Texto y foto de portada, lado a lado en pantallas amplias. */
@@ -1075,13 +1095,83 @@ button:focus-visible {
   }
 }
 
-/* Respeta la preferencia del dispositivo de reducir el movimiento. */
+/* Revela los bloques cuando entran en pantalla, sin usar JavaScript. */
+@keyframes aparecer-al-desplazarse {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@keyframes aparecer-tarjeta {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@supports (animation-timeline: view()) {
+  .resumen,
+  .especialidad .seccion-titulo,
+  .especialidad .texto-seccion,
+  .encabezado-modulos,
+  .programas-intro,
+  .grupo-programa,
+  .aviso-recursos,
+  .cierre-contenido > *,
+  .titulo-modulo,
+  .detalle-cuerpo > *,
+  .videos-modulo > *,
+  .pie-detalle {
+    animation-name: aparecer-al-desplazarse;
+    animation-duration: 1ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+  .modulo {
+    animation-name: aparecer-tarjeta;
+    animation-duration: 1ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+/* Reduce animaciones para quienes prefieren movimiento mínimo. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   body::before,
   body::after {
+    animation: none;
+  }
+  .resumen,
+  .especialidad .seccion-titulo,
+  .especialidad .texto-seccion,
+  .encabezado-modulos,
+  .programas-intro,
+  .grupo-programa,
+  .aviso-recursos,
+  .cierre-contenido > *,
+  .titulo-modulo,
+  .detalle-cuerpo > *,
+  .videos-modulo > *,
+  .pie-detalle {
+    animation: none;
+  }
+  .modulo {
     animation: none;
   }
   *,
