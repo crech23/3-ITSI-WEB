@@ -134,6 +134,18 @@ button:focus-visible {
   border-bottom: 1px solid #354b5f;
   box-shadow: 0 2px 12px rgba(2, 12, 20, 0.25);
 }
+.promo-top {
+  padding: 7px 13px;
+  color: #172a3a;
+  background: #ffd43b;
+  border: 1px solid #f0bb1a;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 .identidad {
   display: flex;
   align-items: center;
@@ -894,11 +906,22 @@ button:focus-visible {
   html {
     scroll-padding-top: 72px;
   }
-  .encabezado {
-    min-height: 68px;
-    padding: 7px 14px;
+  /* En móvil la promoción se centra debajo del logo y del botón. */
+  .promo-top {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    padding: 3px 8px;
+    font-size: 8px;
+    transform: translateX(-50%);
   }
-  .identidad {
+  .encabezado {
+    min-height: 88px;
+    padding: 6px 14px 25px;
+  }
+
+
+.identidad {
     gap: 8px;
   }
   .identidad img {
@@ -919,7 +942,7 @@ button:focus-visible {
     font-size: 11px;
   }
   .menu-contenido {
-    inset: 74px 14px auto auto;
+    inset: 94px 14px auto auto;
     min-width: 215px;
   }
   .portada {
