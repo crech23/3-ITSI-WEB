@@ -627,6 +627,16 @@ button:focus-visible {
   background: #172a3a;
   font-size: 10px;
 }
+.promo-anio {
+  padding: 4px 10px;
+  color: #ffd43b;
+  border: 1px solid rgba(255, 212, 59, 0.38);
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .pie a {
   color: #ffe17a;
   text-decoration: none;
